@@ -16,9 +16,9 @@ predicted2segmentation <- function( x, domainImage ) {
   return( seg )
 }
 
-f=dir(patt='IN', path='/home/stnava/INHS/256px/', full.names =T )
-g=dir(patt='IN', path='/home/stnava/INHS/', full.names =T )
-file.names = dir(patt='IN', path='/home/stnava/INHS/256px/', full.names =F )
+f=dir(patt='IN', path='INHS/256px/', full.names =T )
+g=dir(patt='IN', path='INHS/', full.names =T )
+file.names = dir(patt='IN', path='INHS/256px/', full.names =F )
 
 N=30
 #samples=1:N
@@ -29,7 +29,7 @@ file.names=file.names[samples]
   
 imglist = lapply(X = f, FUN = antsImageRead)
 full.imgs = lapply(X= g, FUN = antsImageRead)
-modelfn = '/home/maga/ml_fish_seg/models/augmented_unet.h5'
+modelfn = 'models/augmented_unet.h5'
 domainImage <- imglist[[1]]
 
 new.X <- array( data = NA, dim = c( length(f), dim( domainImage ), 3 ) )
