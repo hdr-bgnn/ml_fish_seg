@@ -5,8 +5,10 @@ library( tensorflow )
 library( keras )
 
 library(reticulate)
-use_python("/Users/leipzig/miniconda3/envs/tensorflow/bin/python")
-use_condaenv("tensorflow")
+
+#you can use these to point R to a specific conda install
+#use_python("/Users/leipzig/miniconda3/envs/tensorflow/bin/python")
+#use_condaenv("tensorflow")
 
 predicted2segmentation <- function( x, domainImage ) {
   xdim = dim( x )
