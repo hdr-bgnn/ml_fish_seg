@@ -11,7 +11,7 @@ segCh = Channel
                 .fromPath("${params.fish_dir}/*nii.gz",type:'file')
                 .map { file -> tuple(file.baseName, file) }                
                 
-process resize {
+process resizeImgs {
     tag "$filebasename"
  
     input:
